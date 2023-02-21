@@ -77,3 +77,42 @@ INIT
 
 
 START
+
+
+
+
+My Pseudocode
+
+My questions
+    -When the game is over, how do you have only the winning spaces highlighted?
+    -Do I really need 9 different event listeners, or can I start on the 5th turn?
+    -How to I simulate turns?
+    -How to make the eventListeners check the whoWon function to see if there is a winner yet?
+
+Initial screen will have the board, the initial layout
+    -Use bootstrap classes and CSS styles to make each box (the board / playing area)
+    -Make reset button under the board
+    -Do this all in Javascript using .createElement for each HTML element
+    -At the top, display who's turn it is. The initial value will be Player 1 as they will start the game
+    -Have the game state set at default (blank board)
+
+Create a state for each element of the game
+    -currentPlayer = player1 && player2
+	-boardState = [] (NINE SPOTS) ID's = box1, box2, box3, box4, box5, box6, box7, box8, box9
+	-winConditions
+		[0,1,2] - box1, box2, box3
+		[3,4,5] - box4, box5, box6
+		[6,7,8] - box7, box8, box9
+	    [0,3,6] - box1, box4, box7
+		[1,4,7] - box2, box5, box8
+		[2,5,8] - box3, box6, box9
+		[0,4,8] - box1, box5, box9
+		[2,4,6] - box3, box5, box7
+        Function to get who the winner is
+            -function whoWon
+                -ID each box ID in HTML to look at the contents
+                -Loop through each array to check if each box is === X or === O
+                -If one of the arrays === X or === O, stop the game and display the winner
+
+Reset button function
+    -calls back to the inital function where the board is blank

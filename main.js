@@ -1,3 +1,5 @@
+// ALL THE DIVS, or Div Wars, Return of the Divs
+
 let appMain = document.getElementById("app");
 
     let mainDiv = document.createElement("div");
@@ -64,8 +66,16 @@ let appMain = document.getElementById("app");
         div9.id = "box9";
         mainDiv.appendChild(div9);
 
+// Make the button
+
 let btn = document.createElement("btn");
 btn.innerText = "Reset Game";
 btn.className = "btn btn-rounded";
 btn.id = "reset";
 appMain.appendChild(btn);
+
+// Get the ID of the turn div where who's turn will be displayed as well as who the winner is
+
+let playerTurn = document.getElementById("turn");  
+
+
