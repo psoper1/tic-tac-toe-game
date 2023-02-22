@@ -8,7 +8,7 @@ let appMain = document.getElementById("app");
     appMain.appendChild(mainDiv);
 
         let spanDiv = document.createElement("span");
-        spanDiv.innerText = "Player One";
+        spanDiv.innerText = "Player One's Turn";
         spanDiv.id = "turn";
         mainDiv.appendChild(spanDiv);
 
@@ -30,6 +30,9 @@ let appMain = document.getElementById("app");
         div2.style = "border-top: 0";
         div2.id = "box2";
         mainDiv.appendChild(div2);
+        let p2 = document.createElement("p");
+        p2.id = "p2";
+        div2.appendChild(p2);
 
         let div3 = document.createElement("div");
         div3.className = "box";
@@ -76,7 +79,7 @@ let appMain = document.getElementById("app");
 // Make the button
 
 let btn = document.createElement("btn");
-btn.innerText = "Reset Game";
+btn.innerText = "Reset Board";
 btn.className = "btn btn-rounded";
 btn.id = "reset";
 appMain.appendChild(btn);
@@ -85,17 +88,55 @@ appMain.appendChild(btn);
 
 let currentPlayer = document.getElementById("turn");
 
+function printTurn() {
+    if (currentPlayer = "Player One") {
+        document.getElementById("p1").innerHTML = "X";
+        document.getElementById("turn").innerText = "Player Two" + "'s turn";
+    } else if (currentPlayer = "Player Two") {
+        document.getElementById("p1").innerHTML = "O";
+        document.getElementById("turn").innerText = "Player One" + "'s turn";
+    }
+}
+
 
 //For some reason the === is not working, clicking the div box 1 will skip and print O
 div1.addEventListener("click", () => {
-    if (currentPlayer == "Player One") {
+    if (currentPlayer = "Player One") {
         document.getElementById("p1").innerHTML = "X";
-    } else {
+        document.getElementById("turn").innerText = "Player Two" + "'s turn";
+    } else if (currentPlayer == "Player Two") {
         document.getElementById("p1").innerHTML = "O";
+        document.getElementById("turn").innerText = "Player One" + "'s turn";
     }
-    });
+});
     
-    
+
+    div2.addEventListener("click", () => {
+        if ((currentPlayer = "Player One")) {
+            document.getElementById("p2").innerHTML = "X";
+            document.getElementById("turn").innerText = "Player Two" + "'s turn";
+        } else if (currentPlayer == "Player Two") {
+            document.getElementById("p2").innerHTML = "O";
+            document.getElementById("turn").innerText = "Player One" + "'s turn";
+        }
+
+        
+        });
+
+
+//Event listener to clear all the p tags on the board and change it back to Player One's turn
+        btn.addEventListener("click", () => {
+            document.getElementById("turn").innerText = "Player One's Turn";
+            p1.innerText = "";
+            p2.innerText = "";
+            p3.innerText = "";
+            p4.innerText = "";
+            p5.innerText = "";
+            p6.innerText = "";
+            p7.innerText = "";
+            p8.innerText = "";
+            p9.innerText = "";
+        })
 
 
     // button.addEventListener('click', ()=>{
