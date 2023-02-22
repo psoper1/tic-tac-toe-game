@@ -169,6 +169,7 @@ btn.addEventListener("click", () => {
     div7.innerText = "";
     div8.innerText = "";
     div9.innerText = "";
+    state.howManyTurns = 0;
 })
 
 

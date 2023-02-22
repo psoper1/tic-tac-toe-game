@@ -99,6 +99,7 @@ Initial screen will have the board, the initial layout
 Create a state for each element of the game
     -currentPlayer = player1 && player2
 		-Initial player is player1, everytime a box is clicked, if the state of the currentPlayer is player1, change to player2
+		based on if the howManyTurns is even or odd
 			if player2 change to player 1
 				//Run this in the eventListener for everytime a box is clicked
 				-IF (currentPlayer === "Player One") {
@@ -124,12 +125,11 @@ Create a state for each element of the game
                 -Loop through each array to check if each box is === X or === O
                 -If one of the arrays === X or === O, stop the game and display the winner
 		
-		Onclick listener for when a box is clicked run function to print either X or O depending on whos turn it is
-			function printResult(){
-				if (currentPlayer === "Player One"){
-					
-				}
-			}
+		Onclick listener for when a box is clicked run function to print either X or O depending on whos turn it is then changing the players turn
+			-make a for loop to loop through all of the divs with the class box
+			-inside call the getCurrentPlayer function to see who's turn it is
+			-IF currentPlayer = Odd number then print X and increment howManyTurns by 1
+				-ELSE print O and increment howManyTurns by 1
 
 Reset button function
-    -calls back to the inital function where the board is blank
+    -clears all divs and sets state back to default
