@@ -1,6 +1,17 @@
+//State stuff
+
+let state = {
+    currentPlayer: 1,
+    howManyTurns: 0,
+    gameState: true,
+    boxes: [],
+}
+
 // ALL THE DIVS, or Div Wars, Return of the Divs
 
 let appMain = document.getElementById("app");
+
+
 
 let mainDiv = document.createElement("div");
 mainDiv.className = "container";
@@ -8,7 +19,7 @@ mainDiv.id = "main";
 appMain.appendChild(mainDiv);
 
 let spanDiv = document.createElement("span");
-spanDiv.innerText = "Player One's Turn";
+spanDiv.innerText = "Player " + state.currentPlayer;
 // let playerOne = spanDiv.includes("One");
 // let playerTwo = spanDiv.includes("Two");
 spanDiv.id = "turn";
@@ -81,20 +92,46 @@ div9.style = "border-right: 0; border-bottom: 0";
 div9.id = "box9";
 mainDiv.appendChild(div9);
 
+state.boxes = document.querySelectorAll(".box"), potato = 0;
+
+
 // Make the button
+
+// let btn = document.createElement("btn");
+// btn.innerText = "Reset Board";
+// btn.className = "btn btn-rounded";
+// btn.id = "reset";
+// appMain.appendChild(btn);
+
+
+// Get the ID of the turn div where who's turn will be displayed as well as who the winner is
+
+let currentPlayer = document.getElementById("turn");
+
+//  Make a function checkTurn to check for whos turn it is
+// Using % (Modulas)
+function getCurrentPlayer () {
+
+}
+
+
+
+for (let i = 0; i < state.boxes.length; i++) {
+    console.log(state.boxes[i])
+    state.boxes[i].addEventListener("click", function() {
+        //Run the function checkTurn
+            //if statement based on checkTurn to print X or O in the box
+        state.boxes[i].innerText = "X";
+        state.howManyTurns++;
+    })
+}
+
 
 let btn = document.createElement("btn");
 btn.innerText = "Reset Board";
 btn.className = "btn btn-rounded";
 btn.id = "reset";
 appMain.appendChild(btn);
-
-// Get the ID of the turn div where who's turn will be displayed as well as who the winner is
-
-var currentPlayer = "Player One's turn";
-
-
-
 
 
 
