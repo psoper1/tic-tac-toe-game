@@ -8,7 +8,7 @@ let appMain = document.getElementById("app");
     appMain.appendChild(mainDiv);
 
         let spanDiv = document.createElement("span");
-        spanDiv.innerText = "Tic Tac Toe";
+        spanDiv.innerText = "Player One";
         spanDiv.id = "turn";
         mainDiv.appendChild(spanDiv);
 
@@ -17,6 +17,13 @@ let appMain = document.getElementById("app");
         div1.style = "border-left: 0; border-top: 0";
         div1.id = "box1";
         mainDiv.appendChild(div1);
+        let btnBox1 = document.createElement("button");
+        btnBox1.id = "btnBox1";
+        btnBox1.innerText = "Test";
+        appMain.appendChild(btnBox1);
+        let p1 = document.createElement("p");
+        p1.id = "p1";
+        div1.appendChild(p1);
 
         let div2 = document.createElement("div");
         div2.className = "box";
@@ -76,6 +83,21 @@ appMain.appendChild(btn);
 
 // Get the ID of the turn div where who's turn will be displayed as well as who the winner is
 
-let playerTurn = document.getElementById("turn");  
+let currentPlayer = document.getElementById("turn");
 
 
+//For some reason the === is not working, clicking the div box 1 will skip and print O
+div1.addEventListener("click", () => {
+    if (currentPlayer == "Player One") {
+        document.getElementById("p1").innerHTML = "X";
+    } else {
+        document.getElementById("p1").innerHTML = "O";
+    }
+    });
+    
+    
+
+
+    // button.addEventListener('click', ()=>{
+    //     msg.classList.toggle('reveal');
+    //   })

@@ -98,8 +98,17 @@ Initial screen will have the board, the initial layout
 
 Create a state for each element of the game
     -currentPlayer = player1 && player2
+		-Initial player is player1, everytime a box is clicked, if the state of the currentPlayer is player1, change to player2
+			if player2 change to player 1
+				//Run this in the eventListener for everytime a box is clicked
+				-IF (currentPlayer === "Player One") {
+					currentPlayer.innerTEXT = "Player Two";
+				} ELSE IF (currentPlayer === "Player Two"){
+					currentPlayer.innerTEXT = "Player One";
+				}
 	-boardState = [] (NINE SPOTS) ID's = box1, box2, box3, box4, box5, box6, box7, box8, box9
 	-winConditions
+		[
 		[0,1,2] - box1, box2, box3
 		[3,4,5] - box4, box5, box6
 		[6,7,8] - box7, box8, box9
@@ -108,11 +117,19 @@ Create a state for each element of the game
 		[2,5,8] - box3, box6, box9
 		[0,4,8] - box1, box5, box9
 		[2,4,6] - box3, box5, box7
+		]
         Function to get who the winner is
             -function whoWon
                 -ID each box ID in HTML to look at the contents
                 -Loop through each array to check if each box is === X or === O
                 -If one of the arrays === X or === O, stop the game and display the winner
+		
+		Onclick listener for when a box is clicked run function to print either X or O depending on whos turn it is
+			function printResult(){
+				if (currentPlayer === "Player One"){
+					
+				}
+			}
 
 Reset button function
     -calls back to the inital function where the board is blank
