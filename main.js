@@ -94,31 +94,33 @@ let currentPlayer = document.getElementById("turn");
 //  Make a function checkTurn to check for whos turn it is
 // Using % (Modulas)
 function getCurrentPlayer() {
-if (state.howManyTurns % 2 == 0) {
-    state.currentPlayer = 2;
-} else {
-    state.currentPlayer = 1;
-}
+    if (state.howManyTurns % 2 == 0) {
+        state.currentPlayer = 2;
+    } else {
+        state.currentPlayer = 1;
+    }
 }
 
 
 
 for (let i = 0; i < state.boxes.length; i++) {
     console.log(state.boxes[i])
-    state.boxes[i].addEventListener("click", function() {
+    state.boxes[i].addEventListener("click", function () {
         //Run the function getCurrentPlayer
-        getCurrentPlayer(state.boxes) 
-            //if statement based on getCurrentPlayer to print X or O in the box
-            if (state.howManyTurns % 2 == 0) {
-                state.boxes[i].innerText = "X";
-                spanDiv.innerText = "Player " + state.currentPlayer + " GO!";
-                state.howManyTurns++;
-            } else {
-                state.boxes[i].innerText = "O";
-                spanDiv.innerText = "Player " + state.currentPlayer + " GO!";
-                state.howManyTurns++;
-            }
-        
+        getCurrentPlayer(state.boxes)
+        //if statement based on getCurrentPlayer to print X or O in the box
+        if (state.howManyTurns % 2 == 0) {
+            state.boxes[i].innerText = "X";
+            spanDiv.innerText = "Player " + state.currentPlayer + " GO!";
+            state.howManyTurns++;
+
+        } else {
+            state.boxes[i].innerText = "O";
+            spanDiv.innerText = "Player " + state.currentPlayer + " GO!";
+            state.howManyTurns++;
+
+        }
+
     });
 }
 

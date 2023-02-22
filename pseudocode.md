@@ -97,16 +97,9 @@ Initial screen will have the board, the initial layout
     -Have the game state set at default (blank board)
 
 Create a state for each element of the game
-    -currentPlayer = player1 && player2
-		-Initial player is player1, everytime a box is clicked, if the state of the currentPlayer is player1, change to player2
-		based on if the howManyTurns is even or odd
-			if player2 change to player 1
-				//Run this in the eventListener for everytime a box is clicked
-				-IF (currentPlayer === "Player One") {
-					currentPlayer.innerTEXT = "Player Two";
-				} ELSE IF (currentPlayer === "Player Two"){
-					currentPlayer.innerTEXT = "Player One";
-				}
+    -currentPlayer
+		-Odd number then print X and increment howManyTurns by 1
+				
 	-boardState = [] (NINE SPOTS) ID's = box1, box2, box3, box4, box5, box6, box7, box8, box9
 	-winConditions
 		[
@@ -132,4 +125,4 @@ Create a state for each element of the game
 				-ELSE print O and increment howManyTurns by 1
 
 Reset button function
-    -clears all divs and sets state back to default
+    -clears all divs and sets state of currentPlayer and howManyTurns back to default
