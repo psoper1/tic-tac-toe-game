@@ -20,8 +20,6 @@ appMain.appendChild(mainDiv);
 
 let spanDiv = document.createElement("span");
 spanDiv.innerText = "Player " + state.currentPlayer + " GO!";
-// let playerOne = spanDiv.includes("One");
-// let playerTwo = spanDiv.includes("Two");
 spanDiv.id = "turn";
 mainDiv.appendChild(spanDiv);
 
@@ -30,10 +28,10 @@ div1.className = "box";
 div1.style = "border-left: 0; border-top: 0";
 div1.id = "box1";
 mainDiv.appendChild(div1);
-let btnBox1 = document.createElement("button");
-btnBox1.id = "btnBox1";
-btnBox1.innerText = "Test";
-appMain.appendChild(btnBox1);
+// let btnBox1 = document.createElement("button");
+// btnBox1.id = "btnBox1";
+// btnBox1.innerText = "Test";
+// appMain.appendChild(btnBox1);
 let p1 = document.createElement("p");
 p1.id = "p1";
 div1.appendChild(p1);
@@ -93,16 +91,6 @@ div9.id = "box9";
 mainDiv.appendChild(div9);
 
 state.boxes = document.querySelectorAll(".box");
-// , potato = 0
-
-// Make the button
-
-// let btn = document.createElement("btn");
-// btn.innerText = "Reset Board";
-// btn.className = "btn btn-rounded";
-// btn.id = "reset";
-// appMain.appendChild(btn);
-
 
 // Get the ID of the turn div where who's turn will be displayed as well as who the winner is
 
@@ -139,14 +127,9 @@ for (let i = 0; i < state.boxes.length; i++) {
     });
 }
 
-// if (getCurrentPlayer === 1){
-//     state.boxes[i].innerText = "X";
-//     } else {
-//         state.boxes[i].innerText = "O";
-//     }
-//     state.howManyTurns++;
 
 
+//Make reset button to reset the state of the game to default
 let btn = document.createElement("btn");
 btn.innerText = "Reset Board";
 btn.className = "btn btn-rounded";
@@ -171,81 +154,3 @@ btn.addEventListener("click", () => {
     div9.innerText = "";
     state.howManyTurns = 0;
 })
-
-
-    // button.addEventListener('click', ()=>{
-    //     msg.classList.toggle('reveal');
-    //   })
-
-    // var currentPlayer = "Player One's turn";
-// let potato = 0;
-
-// function printTurn() {
-//     if (currentPlayer = playerOne) {
-//         document.getElementById("p1").innerHTML = "X";
-//         document.getElementById("turn").innerText = "Player Two" + "'s turn";
-//     } else if (currentPlayer = playerTwo) {
-//         document.getElementById("p1").innerHTML = "O";
-//         document.getElementById("turn").innerText = "Player One" + "'s turn";
-//     }
-// }
-
-
-//For some reason the === is not working, clicking the div box 1 will skip and print O
-// div1.addEventListener("click", () => {
-//     if (currentPlayer = "Player One's turn") {
-//         document.getElementById("p1").innerText = "X";
-//         document.getElementById("turn").innerText = "Player Two's turn";
-//         currentPlayer = "Player Two's turn";
-//         console.log("test1")
-//     } else {
-//         document.getElementById("p1").innerText = "O";
-//         document.getElementById("turn").innerText = "Player One's turn";
-//         currentPlayer = "Player One's turn";
-//         console.log("test2")
-//     }
-    
-
-// });
-
-
-// div2.addEventListener("click", () => {
-//     console.log(currentPlayer)
-//     if (currentPlayer = "Player One's turn") {
-//         document.getElementById("p2").innerHTML = "X";
-//         document.getElementById("turn").innerText = "Player Two's turn";
-//         currentPlayer = "Player Two's turn";
-//         potato = 1;
-//         console.log("test3")
-//     }
-//     if (currentPlayer = "Player Two's turn" && potato != 1) {
-//         document.getElementById("p2").innerText = "O";
-//         document.getElementById("turn").innerText = "Player One's turn";
-//         currentPlayer = "Player One's turn";
-//         console.log("test4")
-//     }
-// console.log(currentPlayer)
-//     potato = 0;
-
-// });
-
-// div3.addEventListener("click", () => {
-//     console.log(currentPlayer)
-//     console.log(potato)
-//     if (currentPlayer = "Player One's turn") {
-//         document.getElementById("p3").innerHTML = "X";
-//         document.getElementById("turn").innerText = "Player Two's turn";
-//         currentPlayer = "Player Two's turn";
-//         potato = 1;
-//         console.log("test3")
-//     }
-//     if (currentPlayer = "Player Two's turn"  && potato != 1) {
-//         document.getElementById("p3").innerText = "O";
-//         document.getElementById("turn").innerText = "Player One's turn";
-//         currentPlayer = "Player One's turn";
-//         potato = 0;
-//         console.log("test4")
-//     }
-
-//     potato = 0;
-// });
