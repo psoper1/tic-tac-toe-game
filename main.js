@@ -28,10 +28,6 @@ div1.className = "box";
 div1.style = "border-left: 0; border-top: 0";
 div1.id = "box1";
 mainDiv.appendChild(div1);
-// let btnBox1 = document.createElement("button");
-// btnBox1.id = "btnBox1";
-// btnBox1.innerText = "Test";
-// appMain.appendChild(btnBox1);
 let p1 = document.createElement("p");
 p1.id = "p1";
 div1.appendChild(p1);
@@ -62,7 +58,6 @@ mainDiv.appendChild(div4);
 
 let div5 = document.createElement("div");
 div5.className = "box";
-// div5.style = "border-left: 0; border-top: 0";
 div5.id = "box5";
 mainDiv.appendChild(div5);
 
