@@ -19,7 +19,7 @@ mainDiv.id = "main";
 appMain.appendChild(mainDiv);
 
 let spanDiv = document.createElement("span");
-spanDiv.innerText = "Player " + state.currentPlayer;
+spanDiv.innerText = "Player " + state.currentPlayer + " GO!";
 // let playerOne = spanDiv.includes("One");
 // let playerTwo = spanDiv.includes("Two");
 spanDiv.id = "turn";
@@ -110,13 +110,13 @@ let currentPlayer = document.getElementById("turn");
 
 //  Make a function checkTurn to check for whos turn it is
 // Using % (Modulas)
-// function getCurrentPlayer() {
-// if (state.currentPlayer % 2 == 0) {
-//     state.currentPlayer = 2;
-// } else {
-//     state.currentPlayer = 1;
-// }
-// }
+function getCurrentPlayer() {
+if (state.howManyTurns % 2 == 0) {
+    state.currentPlayer = 2;
+} else {
+    state.currentPlayer = 1;
+}
+}
 
 
 
@@ -124,17 +124,19 @@ for (let i = 0; i < state.boxes.length; i++) {
     console.log(state.boxes[i])
     state.boxes[i].addEventListener("click", function() {
         //Run the function getCurrentPlayer
-        
+        getCurrentPlayer(state.boxes) 
             //if statement based on getCurrentPlayer to print X or O in the box
             if (state.howManyTurns % 2 == 0) {
                 state.boxes[i].innerText = "X";
+                spanDiv.innerText = "Player " + state.currentPlayer + " GO!";
                 state.howManyTurns++;
             } else {
                 state.boxes[i].innerText = "O";
+                spanDiv.innerText = "Player " + state.currentPlayer + " GO!";
                 state.howManyTurns++;
             }
         
-    })
+    });
 }
 
 // if (getCurrentPlayer === 1){
@@ -157,16 +159,16 @@ appMain.appendChild(btn);
 
 //Event listener to clear all the p tags on the board and change it back to Player One's turn
 btn.addEventListener("click", () => {
-    document.getElementById("turn").innerText = "Player One's Turn";
-    p1.innerText = "";
-    p2.innerText = "";
-    p3.innerText = "";
-    p4.innerText = "";
-    p5.innerText = "";
-    p6.innerText = "";
-    p7.innerText = "";
-    p8.innerText = "";
-    p9.innerText = "";
+    document.getElementById("turn").innerText = "Player 1 GO!";
+    div1.innerText = "";
+    div2.innerText = "";
+    div3.innerText = "";
+    div4.innerText = "";
+    div5.innerText = "";
+    div6.innerText = "";
+    div7.innerText = "";
+    div8.innerText = "";
+    div9.innerText = "";
 })
 
 
