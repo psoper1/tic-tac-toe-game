@@ -92,8 +92,8 @@ div9.style = "border-right: 0; border-bottom: 0";
 div9.id = "box9";
 mainDiv.appendChild(div9);
 
-state.boxes = document.querySelectorAll(".box"), potato = 0;
-
+state.boxes = document.querySelectorAll(".box");
+// , potato = 0
 
 // Make the button
 
@@ -110,21 +110,39 @@ let currentPlayer = document.getElementById("turn");
 
 //  Make a function checkTurn to check for whos turn it is
 // Using % (Modulas)
-function getCurrentPlayer () {
-
-}
+// function getCurrentPlayer() {
+// if (state.currentPlayer % 2 == 0) {
+//     state.currentPlayer = 2;
+// } else {
+//     state.currentPlayer = 1;
+// }
+// }
 
 
 
 for (let i = 0; i < state.boxes.length; i++) {
     console.log(state.boxes[i])
     state.boxes[i].addEventListener("click", function() {
-        //Run the function checkTurn
-            //if statement based on checkTurn to print X or O in the box
-        state.boxes[i].innerText = "X";
-        state.howManyTurns++;
+        //Run the function getCurrentPlayer
+        
+            //if statement based on getCurrentPlayer to print X or O in the box
+            if (state.howManyTurns % 2 == 0) {
+                state.boxes[i].innerText = "X";
+                state.howManyTurns++;
+            } else {
+                state.boxes[i].innerText = "O";
+                state.howManyTurns++;
+            }
+        
     })
 }
+
+// if (getCurrentPlayer === 1){
+//     state.boxes[i].innerText = "X";
+//     } else {
+//         state.boxes[i].innerText = "O";
+//     }
+//     state.howManyTurns++;
 
 
 let btn = document.createElement("btn");
