@@ -295,37 +295,3 @@ btn.addEventListener("click", () => {
         document.getElementById("turn").innerText = "Goku! GO!";
     }
 })
-
-
-
-//In the checkWin function, didn't work but lead me to think about it more and come up with my final solution
-
-// if (state.boxes[0], [1], [2] === winningConditions[0]) {
-    //     spanDiv.innerText = "You won!"
-    // } else if (state.boxes[3], [4], [5] === winningConditions[1]) {
-    //     spanDiv.innerText = "You won!"
-    // }
-    // else if (state.boxes[6], [7], [8] === winningConditions[2]) {
-    //     spanDiv.innerText = "You won!"
-    // }
-    // else if (state.boxes[0], [3], [6] === winningConditions[3]) {
-    //     spanDiv.innerText = "You won!"
-    // }
-    // else if (state.boxes[1], [4], [7] === winningConditions[4]) {
-    //     spanDiv.innerText = "You won!"
-    // }
-    // else if (state.boxes[2], [5], [8] === winningConditions[5]) {
-    //     spanDiv.innerText = "You won!"
-    // }
-    // else if (state.boxes[0], [4], [8] === winningConditions[6]) {
-    //     spanDiv.innerText = "You won!"
-    // }
-    // else if (state.boxes[2], [4], [6] === winningConditions[7]) {
-    //     spanDiv.innerText = "You won!"
-    // }
-
-    //for loop I might use later to disable the board after the win
-
-    // for (let i = 0; i < state.boxes.length; i++) {
-    //     state.boxes[i].className = "taco";
-    //     }
