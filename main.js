@@ -2,6 +2,7 @@
 
 let state = {
     currentPlayer: 1,
+    playerName: "Goku",
     howManyTurns: 0,
     gameState: true,
     boxes: []
@@ -19,7 +20,7 @@ mainDiv.id = "main";
 appMain.appendChild(mainDiv);
 
 let spanDiv = document.createElement("span");
-spanDiv.innerText = "Player " + state.currentPlayer + " GO!";
+spanDiv.innerText = state.playerName + "! GO!";
 spanDiv.id = "turn";
 mainDiv.appendChild(spanDiv);
 
@@ -85,6 +86,8 @@ div9.style = "border-right: 0; border-bottom: 0";
 div9.id = "box9";
 mainDiv.appendChild(div9);
 
+//Make the boxes in state all divs with the class box
+
 state.boxes = document.querySelectorAll(".box");
 
 // Get the ID of the turn div where who's turn will be displayed as well as who the winner is
@@ -105,12 +108,20 @@ const winningConditions = [
 
 //Write a function that checks for a winner
 
-function highlightBoxesOfWinner(d1, d2, d3) {
-    d1.classList.add("win");
-    d2.classList.add("win");
-    d3.classList.add("win");
-    
-  };
+function highlightBoxesOfWinner(colorIn1, colorIn2, colorIn3) {
+    colorIn1.classList.add("win");
+    colorIn2.classList.add("win");
+    colorIn3.classList.add("win");
+};
+
+// function gokuOrVegeta() {
+//     if (state.currentPlayer = 1) {
+//         state.currentPlayer = "Goku";
+//     } else {
+//         state.currentPlayer = "Vegeta";
+//     }
+// }
+
 
 
 //Compare the divs in a way that matches the array of winningConditions
@@ -120,37 +131,89 @@ function highlightBoxesOfWinner(d1, d2, d3) {
 //Will likely be a ton of code, but works logically how I am thinking
 
 function checkWin() {
-    if (
-        (div1.innerHTML !== "" && div1.innerHTML === div2.innerHTML && div1.innerHTML === div3.innerHTML) ||
-        (div4.innerHTML !== "" && div4.innerHTML === div5.innerHTML && div4.innerHTML === div6.innerHTML) ||
-        (div7.innerHTML !== "" && div7.innerHTML === div8.innerHTML && div7.innerHTML === div9.innerHTML) ||
-        (div1.innerHTML !== "" && div1.innerHTML === div4.innerHTML && div1.innerHTML === div7.innerHTML) ||
-        (div2.innerHTML !== "" && div2.innerHTML === div5.innerHTML && div2.innerHTML === div8.innerHTML) ||
-        (div3.innerHTML !== "" && div3.innerHTML === div6.innerHTML && div3.innerHTML === div9.innerHTML) ||
-        (div1.innerHTML !== "" && div1.innerHTML === div5.innerHTML && div1.innerHTML === div9.innerHTML) ||
-        (div3.innerHTML !== "" && div3.innerHTML === div5.innerHTML && div3.innerHTML === div7.innerHTML)
-    ) {
-        spanDiv.innerText = "Player " + (state.currentPlayer % 2 + 1) + " won!";
+    if (div1.innerHTML !== "" && div1.innerHTML === div2.innerHTML && div1.innerHTML === div3.innerHTML) {
+
+        spanDiv.innerText = (state.playerName) + " won!";
         state.gameState = false;
-        
+        div1.style.pointerEvents = "none";
+        div2.style.pointerEvents = "none";
+        div3.style.pointerEvents = "none";
+        highlightBoxesOfWinner(div1, div2, div3);
         noMoreClick();
     }
-    
+    else if (div4.innerHTML !== "" && div4.innerHTML === div5.innerHTML && div4.innerHTML === div6.innerHTML) {
+        spanDiv.innerText = (state.playerName) + " won!";
+        state.gameState = false;
+        div4.style.pointerEvents = "none";
+        div5.style.pointerEvents = "none";
+        div6.style.pointerEvents = "none";
+        highlightBoxesOfWinner(div4, div5, div6);
+        noMoreClick();
+    }
+    else if (div7.innerHTML !== "" && div7.innerHTML === div8.innerHTML && div7.innerHTML === div9.innerHTML) {
+        spanDiv.innerText = (state.playerName) + " won!";
+        state.gameState = false;
+        div7.style.pointerEvents = "none";
+        div8.style.pointerEvents = "none";
+        div9.style.pointerEvents = "none";
+        highlightBoxesOfWinner(div7, div8, div9);
+        noMoreClick();
+    }
+    else if (div1.innerHTML !== "" && div1.innerHTML === div4.innerHTML && div1.innerHTML === div7.innerHTML) {
+        spanDiv.innerText = (state.playerName) + " won!";
+        state.gameState = false;
+        div1.style.pointerEvents = "none";
+        div4.style.pointerEvents = "none";
+        div7.style.pointerEvents = "none";
+        highlightBoxesOfWinner(div1, div4, div7);
+        noMoreClick();
+    }
+    else if (div2.innerHTML !== "" && div2.innerHTML === div5.innerHTML && div2.innerHTML === div8.innerHTML) {
+        spanDiv.innerText = (state.playerName) + " won!";
+        state.gameState = false;
+        div2.style.pointerEvents = "none";
+        div5.style.pointerEvents = "none";
+        div8.style.pointerEvents = "none";
+        highlightBoxesOfWinner(div2, div5, div8);
+        noMoreClick();
+    }
+    else if (div3.innerHTML !== "" && div3.innerHTML === div6.innerHTML && div3.innerHTML === div9.innerHTML) {
+        spanDiv.innerText = (state.playerName) + " won!";
+        state.gameState = false;
+        div3.style.pointerEvents = "none";
+        div6.style.pointerEvents = "none";
+        div9.style.pointerEvents = "none";
+        highlightBoxesOfWinner(div3, div6, div9);
+        noMoreClick();
+    }
+    else if (div1.innerHTML !== "" && div1.innerHTML === div5.innerHTML && div1.innerHTML === div9.innerHTML) {
+        spanDiv.innerText = (state.playerName) + " won!";
+        state.gameState = false;
+        div1.style.pointerEvents = "none";
+        div5.style.pointerEvents = "none";
+        div9.style.pointerEvents = "none";
+        highlightBoxesOfWinner(div1, div5, div9);
+        noMoreClick();
+    }
+    else if (div3.innerHTML !== "" && div3.innerHTML === div5.innerHTML && div3.innerHTML === div7.innerHTML) {
+        spanDiv.innerText = (state.playerName) + " won!";
+        state.gameState = false;
+        div3.style.pointerEvents = "none";
+        div5.style.pointerEvents = "none";
+        div7.style.pointerEvents = "none";
+        highlightBoxesOfWinner(div3, div5, div7);
+        noMoreClick();
+    }
+
 };
 
 // Function to disable the click events if the game is over (state.gameStatus = false)
 
 function noMoreClick() {
     if (state.gameState === false) {
-        div1.style.pointerEvents = "none";
-        div2.style.pointerEvents = "none";
-        div3.style.pointerEvents = "none";
-        div4.style.pointerEvents = "none";
-        div5.style.pointerEvents = "none";
-        div6.style.pointerEvents = "none";
-        div7.style.pointerEvents = "none";
-        div8.style.pointerEvents = "none";
-        div9.style.pointerEvents = "none";
+        for (let i = 0; i < state.boxes.length; i++) {
+            state.boxes[i].style.pointerEvents = "none";
+        }
     }
 };
 
@@ -160,36 +223,48 @@ function noMoreClick() {
 function getCurrentPlayer() {
     if (state.howManyTurns % 2 == 0) {
         state.currentPlayer = 2;
+        state.playerName = "Goku";
+
     } else {
         state.currentPlayer = 1;
-    }
+        state.playerName = "Vegeta";
+
+    } 
 }
+
 
 
 //For loop with an eventListener to check whos turn it is, print X or O accordingly and check for who won after each turn
 for (let i = 0; i < state.boxes.length; i++) {
     // console.log(state.boxes[i])
-    state.boxes[i].addEventListener("click", async function () {
+    state.boxes[i].addEventListener("click", function () {
         //Run the function getCurrentPlayer
         getCurrentPlayer(state.boxes)
         //if statement based on getCurrentPlayer to print X or O in the box
         if (state.howManyTurns % 2 == 0) {
             //print the X to the screen
+
             state.boxes[i].innerText = "X";
-            spanDiv.innerText = "Player " + state.currentPlayer + " GO!";
+            state.boxes[i].style.pointerEvents = "none";
+
+            spanDiv.innerText = "Vegeta! GO!";
             //increment hoManyTurns by 1 each time
             state.howManyTurns++;
+
         } else {
             //print the O to the screen
+
             state.boxes[i].innerText = "O";
-            spanDiv.innerText = "Player " + state.currentPlayer + " GO!";
+            state.boxes[i].style.pointerEvents = "none";
+            spanDiv.innerText = "Goku! GO!";
             //increment hoManyTurns by 1 each time
             state.howManyTurns++;
+
         }
         //Call checkWin function after each turn
 
         checkWin();
-        highlightBoxesOfWinner(checkWin(state.boxes));
+
 
 
 
@@ -200,7 +275,7 @@ for (let i = 0; i < state.boxes.length; i++) {
 
 //Make reset button to reset the state of the game to default
 let btn = document.createElement("btn");
-btn.innerText = "Reset Board";
+btn.innerHTML = "";
 btn.className = "btn btn-rounded";
 btn.id = "reset";
 appMain.appendChild(btn);
@@ -209,32 +284,16 @@ appMain.appendChild(btn);
 
 
 
-//Event listener to clear all the divs on the board and change it back to Player One's turn
+//Event listener to clear all the divs on the board and change it back to Player One's turn, reset turns, reset gameState and remove highlighted boxes
 btn.addEventListener("click", () => {
-    document.getElementById("turn").innerText = "Player 1 GO!";
-    div1.innerText = "";
-    div2.innerText = "";
-    div3.innerText = "";
-    div4.innerText = "";
-    div5.innerText = "";
-    div6.innerText = "";
-    div7.innerText = "";
-    div8.innerText = "";
-    div9.innerText = "";
-    div1.style.pointerEvents = "auto";
-    div2.style.pointerEvents = "auto";
-    div3.style.pointerEvents = "auto";
-    div4.style.pointerEvents = "auto";
-    div5.style.pointerEvents = "auto";
-    div6.style.pointerEvents = "auto";
-    div7.style.pointerEvents = "auto";
-    div8.style.pointerEvents = "auto";
-    div9.style.pointerEvents = "auto";
-    state.howManyTurns = 0;
-    state.gameState = true;
-    
-    
-    
+    for (let i = 0; i < state.boxes.length; i++) {
+        state.boxes[i].innerText = ("");
+        state.boxes[i].classList.remove("win");
+        state.boxes[i].style.pointerEvents = "auto";
+        state.howManyTurns = 0;
+        state.gameState = true;
+        document.getElementById("turn").innerText = "Goku! GO!";
+    }
 })
 
 
