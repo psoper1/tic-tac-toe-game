@@ -13,9 +13,15 @@ let state = {
 let appMain = document.getElementById("app");
 
 let gokuImg = document.createElement("img");
+gokuImg.id = "gokuMain";
 gokuImg.className = "goku";
 gokuImg.src = "goku.png";
 appMain.appendChild(gokuImg);
+
+let vegetaImg = document.createElement("img");
+vegetaImg.className = "vegeta";
+vegetaImg.src = "vegeta.png";
+appMain.appendChild(vegetaImg);
 
 
 

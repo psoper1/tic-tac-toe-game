@@ -1,5 +1,15 @@
 .goku {
-	height: 100px;
+	height: 500px;
+    position: absolute;
+    left: 275px;
+    top: 106px;
+}
+
+.vegeta {
+	height: 500px;
+    position: absolute;
+    left: 1323px;
+    top: 87px;
 }
 
 .container{
