@@ -25,7 +25,7 @@
   }
 
 .container .box:hover{
-	background: rgb(232, 247, 31);
+	background: rgb(247, 142, 23);
 	color: rgb(108, 108, 108);
 }
 
@@ -44,4 +44,9 @@
 .win{
 	background: #34dd6d; 
 	color: rgb(44, 224, 44);
+}
+
+body {
+	background-image: url("/background.jpeg");
+	
 }
