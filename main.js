@@ -12,6 +12,11 @@ let state = {
 
 let appMain = document.getElementById("app");
 
+let gokuImg = document.createElement("img");
+gokuImg.className = "goku";
+gokuImg.src = "goku.png";
+appMain.appendChild(gokuImg);
+
 
 
 let mainDiv = document.createElement("div");
@@ -204,7 +209,6 @@ function checkWin() {
         highlightBoxesOfWinner(div3, div5, div7);
         noMoreClick();
     }
-
 };
 
 // Function to disable the click events if the game is over (state.gameStatus = false)
@@ -224,11 +228,9 @@ function getCurrentPlayer() {
     if (state.howManyTurns % 2 == 0) {
         state.currentPlayer = 2;
         state.playerName = "Goku";
-
     } else {
         state.currentPlayer = 1;
         state.playerName = "Vegeta";
-
     } 
 }
 
@@ -243,31 +245,22 @@ for (let i = 0; i < state.boxes.length; i++) {
         //if statement based on getCurrentPlayer to print X or O in the box
         if (state.howManyTurns % 2 == 0) {
             //print the X to the screen
-
             state.boxes[i].innerText = "X";
             state.boxes[i].style.pointerEvents = "none";
-
             spanDiv.innerText = "Vegeta! GO!";
             //increment hoManyTurns by 1 each time
             state.howManyTurns++;
-
         } else {
             //print the O to the screen
-
             state.boxes[i].innerText = "O";
             state.boxes[i].style.pointerEvents = "none";
             spanDiv.innerText = "Goku! GO!";
             //increment hoManyTurns by 1 each time
             state.howManyTurns++;
-
         }
         //Call checkWin function after each turn
 
         checkWin();
-
-
-
-
     });
 }
 
