@@ -51,7 +51,7 @@
 	font-size: 15px;
 	display: block;
 	margin: 40px auto;
-	background-image: url("/dragonballButton.png");
+	background-image: url("./dragonballButton.png");
 }
 
 .win{
