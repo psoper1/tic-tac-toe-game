@@ -123,17 +123,7 @@ function highlightBoxesOfWinner(colorIn1, colorIn2, colorIn3) {
     colorIn1.classList.add("win");
     colorIn2.classList.add("win");
     colorIn3.classList.add("win");
-};
-
-// function gokuOrVegeta() {
-//     if (state.currentPlayer = 1) {
-//         state.currentPlayer = "Goku";
-//     } else {
-//         state.currentPlayer = "Vegeta";
-//     }
-// }
-
-
+}
 
 //Compare the divs in a way that matches the array of winningConditions
 //if div1.innerHTML (What is inside that div, should be X or O) is not equal to an empty string
@@ -145,6 +135,13 @@ function checkWin() {
     if (div1.innerHTML !== "" && div1.innerHTML === div2.innerHTML && div1.innerHTML === div3.innerHTML) {
 
         spanDiv.innerText = (state.playerName) + " won!";
+        if (state.playerName = "Goku") {
+            gokuImg.src = "goku.png";
+            vegetaImg.src = "vegeta.png";
+        } if (state.playerName = "Vegeta") {
+            gokuImg.src = "goku.png";
+            vegetaImg.src = "vegeta.png";
+        }
         state.gameState = false;
         div1.style.pointerEvents = "none";
         div2.style.pointerEvents = "none";
@@ -154,6 +151,13 @@ function checkWin() {
     }
     else if (div4.innerHTML !== "" && div4.innerHTML === div5.innerHTML && div4.innerHTML === div6.innerHTML) {
         spanDiv.innerText = (state.playerName) + " won!";
+        if (state.playerName = "Goku") {
+            gokuImg.src = "goku.png";
+            vegetaImg.src = "vegeta.png";
+        } if (state.playerName = "Vegeta") {
+            gokuImg.src = "goku.png";
+            vegetaImg.src = "vegeta.png";
+        }
         state.gameState = false;
         div4.style.pointerEvents = "none";
         div5.style.pointerEvents = "none";
@@ -163,6 +167,13 @@ function checkWin() {
     }
     else if (div7.innerHTML !== "" && div7.innerHTML === div8.innerHTML && div7.innerHTML === div9.innerHTML) {
         spanDiv.innerText = (state.playerName) + " won!";
+        if (state.playerName = "Goku") {
+            gokuImg.src = "goku.png";
+            vegetaImg.src = "vegeta.png";
+        } if (state.playerName = "Vegeta") {
+            gokuImg.src = "goku.png";
+            vegetaImg.src = "vegeta.png";
+        }
         state.gameState = false;
         div7.style.pointerEvents = "none";
         div8.style.pointerEvents = "none";
@@ -172,6 +183,13 @@ function checkWin() {
     }
     else if (div1.innerHTML !== "" && div1.innerHTML === div4.innerHTML && div1.innerHTML === div7.innerHTML) {
         spanDiv.innerText = (state.playerName) + " won!";
+        if (state.playerName = "Goku") {
+            gokuImg.src = "goku.png";
+            vegetaImg.src = "vegeta.png";
+        } if (state.playerName = "Vegeta") {
+            gokuImg.src = "goku.png";
+            vegetaImg.src = "vegeta.png";
+        }
         state.gameState = false;
         div1.style.pointerEvents = "none";
         div4.style.pointerEvents = "none";
@@ -181,6 +199,13 @@ function checkWin() {
     }
     else if (div2.innerHTML !== "" && div2.innerHTML === div5.innerHTML && div2.innerHTML === div8.innerHTML) {
         spanDiv.innerText = (state.playerName) + " won!";
+        if (state.playerName = "Goku") {
+            gokuImg.src = "goku.png";
+            vegetaImg.src = "vegeta.png";
+        } if (state.playerName = "Vegeta") {
+            gokuImg.src = "goku.png";
+            vegetaImg.src = "vegeta.png";
+        }
         state.gameState = false;
         div2.style.pointerEvents = "none";
         div5.style.pointerEvents = "none";
@@ -190,6 +215,13 @@ function checkWin() {
     }
     else if (div3.innerHTML !== "" && div3.innerHTML === div6.innerHTML && div3.innerHTML === div9.innerHTML) {
         spanDiv.innerText = (state.playerName) + " won!";
+        if (state.playerName = "Goku") {
+            gokuImg.src = "goku.png";
+            vegetaImg.src = "vegeta.png";
+        } if (state.playerName = "Vegeta") {
+            gokuImg.src = "goku.png";
+            vegetaImg.src = "vegeta.png";
+        }
         state.gameState = false;
         div3.style.pointerEvents = "none";
         div6.style.pointerEvents = "none";
@@ -199,6 +231,13 @@ function checkWin() {
     }
     else if (div1.innerHTML !== "" && div1.innerHTML === div5.innerHTML && div1.innerHTML === div9.innerHTML) {
         spanDiv.innerText = (state.playerName) + " won!";
+        if (state.playerName = "Goku") {
+            gokuImg.src = "goku.png";
+            vegetaImg.src = "vegeta.png";
+        } if (state.playerName = "Vegeta") {
+            gokuImg.src = "goku.png";
+            vegetaImg.src = "vegeta.png";
+        }
         state.gameState = false;
         div1.style.pointerEvents = "none";
         div5.style.pointerEvents = "none";
@@ -208,6 +247,13 @@ function checkWin() {
     }
     else if (div3.innerHTML !== "" && div3.innerHTML === div5.innerHTML && div3.innerHTML === div7.innerHTML) {
         spanDiv.innerText = (state.playerName) + " won!";
+        if (state.playerName = "Goku") {
+            gokuImg.src = "goku.png";
+            vegetaImg.src = "vegeta.png";
+        } if (state.playerName = "Vegeta") {
+            gokuImg.src = "goku.png";
+            vegetaImg.src = "vegeta.png";
+        }
         state.gameState = false;
         div3.style.pointerEvents = "none";
         div5.style.pointerEvents = "none";
@@ -237,7 +283,7 @@ function getCurrentPlayer() {
     } else {
         state.currentPlayer = 1;
         state.playerName = "Vegeta";
-    } 
+    }
 }
 
 
@@ -254,6 +300,8 @@ for (let i = 0; i < state.boxes.length; i++) {
             state.boxes[i].innerText = "X";
             state.boxes[i].style.pointerEvents = "none";
             spanDiv.innerText = "Vegeta! GO!";
+            gokuImg.src = "";
+            vegetaImg.src = "vegeta.png";
             //increment hoManyTurns by 1 each time
             state.howManyTurns++;
         } else {
@@ -261,6 +309,8 @@ for (let i = 0; i < state.boxes.length; i++) {
             state.boxes[i].innerText = "O";
             state.boxes[i].style.pointerEvents = "none";
             spanDiv.innerText = "Goku! GO!";
+            vegetaImg.src = "";
+            gokuImg.src = "goku.png";
             //increment hoManyTurns by 1 each time
             state.howManyTurns++;
         }
