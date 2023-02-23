@@ -4,7 +4,7 @@ let state = {
     currentPlayer: 1,
     howManyTurns: 0,
     gameState: true,
-    boxes: [],
+    boxes: []
 }
 
 // ALL THE DIVS, or Div Wars, Return of the Divs
@@ -91,6 +91,50 @@ state.boxes = document.querySelectorAll(".box");
 
 let currentPlayer = document.getElementById("turn");
 
+//Declare winning conditions
+const winningConditions = [
+    [0, 1, 2],
+    [3, 4, 5],
+    [6, 7, 8],
+    [0, 3, 6],
+    [1, 4, 7],
+    [2, 5, 8],
+    [0, 4, 8],
+    [2, 4, 6]
+];
+
+//Write a function that checks for a winner
+
+function checkWin() {
+
+    if (div1.innerHTML !== "" && div1.innerHTML === div2.innerHTML && div1.innerHTML === div3.innerHTML) {
+        spanDiv.innerText = state.currentPlayer-- + " won!";
+    }
+    else if (div4.innerHTML !== "" && div4.innerHTML === div5.innerHTML && div4.innerHTML === div6.innerHTML) {
+        spanDiv.innerText = state.currentPlayer-- + " won!";
+    }
+    else if (div7.innerHTML !== "" && div7.innerHTML === div8.innerHTML && div7.innerHTML === div9.innerHTML) {
+        spanDiv.innerText = state.currentPlayer-- + " won!";
+    }
+    else if (div1.innerHTML !== "" && div1.innerHTML === div4.innerHTML && div1.innerHTML === div7.innerHTML) {
+        spanDiv.innerText = state.currentPlayer-- + " won!";
+    }
+    else if (div2.innerHTML !== "" && div2.innerHTML === div5.innerHTML && div2.innerHTML === div8.innerHTML) {
+        spanDiv.innerText = state.currentPlayer-- + " won!";
+    }
+    else if (div3.innerHTML !== "" && div3.innerHTML === div6.innerHTML && div3.innerHTML === div9.innerHTML) {
+        spanDiv.innerText = state.currentPlayer-- + " won!";
+    }
+    else if (div1.innerHTML !== "" && div1.innerHTML === div5.innerHTML && div1.innerHTML === div9.innerHTML) {
+        spanDiv.innerText = state.currentPlayer-- + " won!";
+    }
+    else if (div3.innerHTML !== "" && div3.innerHTML === div5.innerHTML && div3.innerHTML === div7.innerHTML) {
+        spanDiv.innerText = state.currentPlayer-- + " won!";
+    }
+};
+
+
+
 //  Make a function checkTurn to check for whos turn it is
 // Using % (Modulas)
 function getCurrentPlayer() {
@@ -112,6 +156,11 @@ for (let i = 0; i < state.boxes.length; i++) {
         if (state.howManyTurns % 2 == 0) {
             state.boxes[i].innerText = "X";
             spanDiv.innerText = "Player " + state.currentPlayer + " GO!";
+
+
+
+
+
             state.howManyTurns++;
 
         } else {
@@ -120,7 +169,7 @@ for (let i = 0; i < state.boxes.length; i++) {
             state.howManyTurns++;
 
         }
-
+        checkWin();
     });
 }
 
@@ -151,3 +200,37 @@ btn.addEventListener("click", () => {
     div9.innerText = "";
     state.howManyTurns = 0;
 })
+
+
+
+//In the checkWin function, didn't work
+
+// if (state.boxes[0], [1], [2] === winningConditions[0]) {
+    //     spanDiv.innerText = "You won!"
+    // } else if (state.boxes[3], [4], [5] === winningConditions[1]) {
+    //     spanDiv.innerText = "You won!"
+    // }
+    // else if (state.boxes[6], [7], [8] === winningConditions[2]) {
+    //     spanDiv.innerText = "You won!"
+    // }
+    // else if (state.boxes[0], [3], [6] === winningConditions[3]) {
+    //     spanDiv.innerText = "You won!"
+    // }
+    // else if (state.boxes[1], [4], [7] === winningConditions[4]) {
+    //     spanDiv.innerText = "You won!"
+    // }
+    // else if (state.boxes[2], [5], [8] === winningConditions[5]) {
+    //     spanDiv.innerText = "You won!"
+    // }
+    // else if (state.boxes[0], [4], [8] === winningConditions[6]) {
+    //     spanDiv.innerText = "You won!"
+    // }
+    // else if (state.boxes[2], [4], [6] === winningConditions[7]) {
+    //     spanDiv.innerText = "You won!"
+    // }
+
+    //for loop I might use later to disable the board after the win
+
+    // for (let i = 0; i < state.boxes.length; i++) {
+    //     state.boxes[i].className = "taco";
+    //     }
