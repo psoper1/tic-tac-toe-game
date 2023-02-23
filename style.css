@@ -12,6 +12,12 @@
     top: 87px;
 }
 
+#turn {
+	font-family: 'Bowlby One';
+	font-size: 50px;
+	font-style: italic;
+}
+
 .container{
 	width: 330px;
 	overflow: hidden;
