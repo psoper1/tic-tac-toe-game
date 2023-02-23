@@ -2,9 +2,9 @@ My Pseudocode
 
 My questions
     -When the game is over, how do you have only the winning spaces highlighted?
-    -Do I really need 9 different event listeners, or can I start on the 5th turn?
-    -How to I simulate turns?
-    -How to make the eventListeners check the whoWon function to see if there is a winner yet?
+    -GOT IT - Do I really need 9 different event listeners, or can I start on the 5th turn?
+    -GOT IT - How to I simulate turns?
+    -GOT IT - How to make the eventListeners check the whoWon function to see if there is a winner yet?
 
 Initial screen will have the board, the initial layout
     -Use bootstrap classes and CSS styles to make each box (the board / playing area)

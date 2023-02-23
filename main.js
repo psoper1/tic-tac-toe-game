@@ -113,33 +113,37 @@ const winningConditions = [
 //Will likely be a ton of code, but works logically how I am thinking
 
 function checkWin() {
-
-    if (div1.innerHTML !== "" && div1.innerHTML === div2.innerHTML && div1.innerHTML === div3.innerHTML) {
-        spanDiv.innerText = state.currentPlayer-- + " won!";
-    }
-    else if (div4.innerHTML !== "" && div4.innerHTML === div5.innerHTML && div4.innerHTML === div6.innerHTML) {
-        spanDiv.innerText = state.currentPlayer-- + " won!";
-    }
-    else if (div7.innerHTML !== "" && div7.innerHTML === div8.innerHTML && div7.innerHTML === div9.innerHTML) {
-        spanDiv.innerText = state.currentPlayer-- + " won!";
-    }
-    else if (div1.innerHTML !== "" && div1.innerHTML === div4.innerHTML && div1.innerHTML === div7.innerHTML) {
-        spanDiv.innerText = state.currentPlayer-- + " won!";
-    }
-    else if (div2.innerHTML !== "" && div2.innerHTML === div5.innerHTML && div2.innerHTML === div8.innerHTML) {
-        spanDiv.innerText = state.currentPlayer-- + " won!";
-    }
-    else if (div3.innerHTML !== "" && div3.innerHTML === div6.innerHTML && div3.innerHTML === div9.innerHTML) {
-        spanDiv.innerText = state.currentPlayer-- + " won!";
-    }
-    else if (div1.innerHTML !== "" && div1.innerHTML === div5.innerHTML && div1.innerHTML === div9.innerHTML) {
-        spanDiv.innerText = state.currentPlayer-- + " won!";
-    }
-    else if (div3.innerHTML !== "" && div3.innerHTML === div5.innerHTML && div3.innerHTML === div7.innerHTML) {
-        spanDiv.innerText = state.currentPlayer-- + " won!";
+    if (
+        (div1.innerHTML !== "" && div1.innerHTML === div2.innerHTML && div1.innerHTML === div3.innerHTML) ||
+        (div4.innerHTML !== "" && div4.innerHTML === div5.innerHTML && div4.innerHTML === div6.innerHTML) ||
+        (div7.innerHTML !== "" && div7.innerHTML === div8.innerHTML && div7.innerHTML === div9.innerHTML) ||
+        (div1.innerHTML !== "" && div1.innerHTML === div4.innerHTML && div1.innerHTML === div7.innerHTML) ||
+        (div2.innerHTML !== "" && div2.innerHTML === div5.innerHTML && div2.innerHTML === div8.innerHTML) ||
+        (div3.innerHTML !== "" && div3.innerHTML === div6.innerHTML && div3.innerHTML === div9.innerHTML) ||
+        (div1.innerHTML !== "" && div1.innerHTML === div5.innerHTML && div1.innerHTML === div9.innerHTML) ||
+        (div3.innerHTML !== "" && div3.innerHTML === div5.innerHTML && div3.innerHTML === div7.innerHTML)
+    ) {
+        spanDiv.innerText = "Player " + (state.currentPlayer % 2 + 1) + " won!";
+        state.gameState = false;
+        noMoreClick();
     }
 };
 
+// Function to disable the click events if the game is over (state.gameStatus = false)
+
+function noMoreClick() {
+    if (state.gameState === false) {
+        div1.style.pointerEvents = "none";
+        div2.style.pointerEvents = "none";
+        div3.style.pointerEvents = "none";
+        div4.style.pointerEvents = "none";
+        div5.style.pointerEvents = "none";
+        div6.style.pointerEvents = "none";
+        div7.style.pointerEvents = "none";
+        div8.style.pointerEvents = "none";
+        div9.style.pointerEvents = "none";
+    }
+};
 
 
 //  Make a function checkTurn to check for whos turn it is
@@ -155,8 +159,8 @@ function getCurrentPlayer() {
 
 //For loop with an eventListener to check whos turn it is, print X or O accordingly and check for who won after each turn
 for (let i = 0; i < state.boxes.length; i++) {
-    console.log(state.boxes[i])
-    state.boxes[i].addEventListener("click", function () {
+    // console.log(state.boxes[i])
+    state.boxes[i].addEventListener("click", async function () {
         //Run the function getCurrentPlayer
         getCurrentPlayer(state.boxes)
         //if statement based on getCurrentPlayer to print X or O in the box
@@ -174,7 +178,11 @@ for (let i = 0; i < state.boxes.length; i++) {
             state.howManyTurns++;
         }
         //Call checkWin function after each turn
+
         checkWin();
+
+
+
     });
 }
 
@@ -191,7 +199,7 @@ appMain.appendChild(btn);
 
 
 
-//Event listener to clear all the p tags on the board and change it back to Player One's turn
+//Event listener to clear all the divs on the board and change it back to Player One's turn
 btn.addEventListener("click", () => {
     document.getElementById("turn").innerText = "Player 1 GO!";
     div1.innerText = "";
@@ -203,7 +211,20 @@ btn.addEventListener("click", () => {
     div7.innerText = "";
     div8.innerText = "";
     div9.innerText = "";
+    div1.style.pointerEvents = "auto";
+    div2.style.pointerEvents = "auto";
+    div3.style.pointerEvents = "auto";
+    div4.style.pointerEvents = "auto";
+    div5.style.pointerEvents = "auto";
+    div6.style.pointerEvents = "auto";
+    div7.style.pointerEvents = "auto";
+    div8.style.pointerEvents = "auto";
+    div9.style.pointerEvents = "auto";
     state.howManyTurns = 0;
+    state.gameState = true;
+    
+    
+    
 })
 
 
