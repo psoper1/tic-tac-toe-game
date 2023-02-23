@@ -1,4 +1,4 @@
-//State stuff
+//State objects
 
 let state = {
     currentPlayer: 1,
@@ -105,6 +105,13 @@ const winningConditions = [
 
 //Write a function that checks for a winner
 
+
+//Compare the divs in a way that matches the array of winningConditions
+//if div1.innerHTML (What is inside that div, should be X or O) is not equal to an empty string
+//  && div1 is equal to div2 and div1 is equal to div3 then it's a win
+//then else if statements for each posible outcome
+//Will likely be a ton of code, but works logically how I am thinking
+
 function checkWin() {
 
     if (div1.innerHTML !== "" && div1.innerHTML === div2.innerHTML && div1.innerHTML === div3.innerHTML) {
@@ -146,7 +153,7 @@ function getCurrentPlayer() {
 }
 
 
-
+//For loop with an eventListener to check whos turn it is, print X or O accordingly and check for who won after each turn
 for (let i = 0; i < state.boxes.length; i++) {
     console.log(state.boxes[i])
     state.boxes[i].addEventListener("click", function () {
@@ -154,21 +161,19 @@ for (let i = 0; i < state.boxes.length; i++) {
         getCurrentPlayer(state.boxes)
         //if statement based on getCurrentPlayer to print X or O in the box
         if (state.howManyTurns % 2 == 0) {
+            //print the X to the screen
             state.boxes[i].innerText = "X";
             spanDiv.innerText = "Player " + state.currentPlayer + " GO!";
-
-
-
-
-
+            //increment hoManyTurns by 1 each time
             state.howManyTurns++;
-
         } else {
+            //print the O to the screen
             state.boxes[i].innerText = "O";
             spanDiv.innerText = "Player " + state.currentPlayer + " GO!";
+            //increment hoManyTurns by 1 each time
             state.howManyTurns++;
-
         }
+        //Call checkWin function after each turn
         checkWin();
     });
 }
@@ -203,7 +208,7 @@ btn.addEventListener("click", () => {
 
 
 
-//In the checkWin function, didn't work
+//In the checkWin function, didn't work but lead me to think about it more and come up with my final solution
 
 // if (state.boxes[0], [1], [2] === winningConditions[0]) {
     //     spanDiv.innerText = "You won!"
