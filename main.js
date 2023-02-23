@@ -105,6 +105,13 @@ const winningConditions = [
 
 //Write a function that checks for a winner
 
+function highlightBoxesOfWinner(d1, d2, d3) {
+    d1.classList.add("win");
+    d2.classList.add("win");
+    d3.classList.add("win");
+    
+  };
+
 
 //Compare the divs in a way that matches the array of winningConditions
 //if div1.innerHTML (What is inside that div, should be X or O) is not equal to an empty string
@@ -125,8 +132,10 @@ function checkWin() {
     ) {
         spanDiv.innerText = "Player " + (state.currentPlayer % 2 + 1) + " won!";
         state.gameState = false;
+        
         noMoreClick();
     }
+    
 };
 
 // Function to disable the click events if the game is over (state.gameStatus = false)
@@ -180,6 +189,7 @@ for (let i = 0; i < state.boxes.length; i++) {
         //Call checkWin function after each turn
 
         checkWin();
+        highlightBoxesOfWinner(checkWin(state.boxes));
 
 
 
