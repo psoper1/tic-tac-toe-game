@@ -9,11 +9,13 @@
     animation-iteration-count: infinite;
     animation-timing-function: ease-in-out;
 }
+
 @keyframes floating {
     0% { transform: translate(0,  0px); }
     50%  { transform: translate(0, 15px); }
     100%   { transform: translate(0, -0px); }   
 }
+
 @media only screen and (max-width: 1026px) {
     #gokuMain {
         display: none;
@@ -22,8 +24,6 @@
 		display: none;
 	}
 }
-
-
 
 .vegeta {
 	height: 500px;
@@ -90,9 +90,6 @@
 	color: rgb(23, 191, 221);
 }
 
-/* #bg {
-	background-image: url("./imgs/background.jpeg");
-} */
 #bg { 
 	background: url("./imgs/background.jpeg") no-repeat center center fixed; 
 	-webkit-background-size: contain;

@@ -30,8 +30,6 @@ playWithSound.className = "playWithSound"
 playWithSound.innerText = "PLAY WITH SOUND ON!";
 appMain.appendChild(playWithSound);
 
-
-
 let mainDiv = document.createElement("div");
 mainDiv.className = "container";
 mainDiv.id = "main";
@@ -311,7 +309,6 @@ function noMoreClick() {
     }
 };
 
-
 //  Make a function checkTurn to check for whos turn it is
 // Using % (Modulas)
 function getCurrentPlayer() {
@@ -323,8 +320,6 @@ function getCurrentPlayer() {
         state.playerName = "Vegeta";
     }
 }
-
-
 
 //For loop with an eventListener to check whos turn it is, print X or O accordingly and check for who won after each turn
 for (let i = 0; i < state.boxes.length; i++) {
@@ -360,18 +355,12 @@ for (let i = 0; i < state.boxes.length; i++) {
     });
 }
 
-
-
 //Make reset button to reset the state of the game to default
 let btn = document.createElement("btn");
 btn.innerHTML = "";
 btn.className = "btn btn-rounded";
 btn.id = "reset";
 appMain.appendChild(btn);
-
-
-
-
 
 //Event listener to clear all the divs on the board and change it back to Player One's turn, reset turns, reset gameState and remove highlighted boxes
 btn.addEventListener("click", () => {
