@@ -90,9 +90,16 @@
 	color: rgb(23, 191, 221);
 }
 
-#bg {
+/* #bg {
 	background-image: url("./imgs/background.jpeg");
-}
+} */
+#bg { 
+	background: url("./imgs/background.jpeg") no-repeat center center fixed; 
+	-webkit-background-size: contain;
+	-moz-background-size: contain;
+	-o-background-size: contain;
+	background-size:auto
+  }
 
 .playWithSound {
 	display: block;
