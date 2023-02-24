@@ -1,6 +1,6 @@
 #gokuMain {
 	height: 500px;
-	max-width: 1280px;
+	max-width: 1026px;
     position: fixed;
     left: 10%;
     top: 106px;
@@ -14,7 +14,7 @@
     50%  { transform: translate(0, 15px); }
     100%   { transform: translate(0, -0px); }   
 }
-@media only screen and (max-width: 1280px) {
+@media only screen and (max-width: 1026px) {
     #gokuMain {
         display: none;
     }
@@ -27,7 +27,7 @@
 
 .vegeta {
 	height: 500px;
-	max-width: 1280px;
+	max-width: 1026px;
     position: fixed;
     right: 10%;
     top: 87px;
