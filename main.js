@@ -25,6 +25,11 @@ vegetaImg.classList.add("img-fluid");
 vegetaImg.src = "vegeta.png";
 appMain.appendChild(vegetaImg);
 
+let playWithSound = document.createElement("span");
+playWithSound.className = "playWithSound"
+playWithSound.innerText = "PLAY WITH SOUND ON!";
+appMain.appendChild(playWithSound);
+
 
 
 let mainDiv = document.createElement("div");

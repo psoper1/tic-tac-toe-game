@@ -69,3 +69,10 @@
 	background-image: url("./imgs/background.jpeg");
 }
 
+.playWithSound {
+	display: block;
+	text-align: center;
+	font-family: sans-serif;
+	font-size: 40px;
+	margin-bottom: 40px;
+}
