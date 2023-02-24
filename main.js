@@ -14,12 +14,14 @@ let appMain = document.getElementById("app");
 
 let gokuImg = document.createElement("img");
 gokuImg.id = "gokuMain";
-gokuImg.className = "goku";
+// gokuImg.className = "goku";
+gokuImg.classList.add("img-fluid");
 gokuImg.src = "goku.png";
 appMain.appendChild(gokuImg);
 
 let vegetaImg = document.createElement("img");
 vegetaImg.className = "vegeta";
+vegetaImg.classList.add("img-fluid");
 vegetaImg.src = "vegeta.png";
 appMain.appendChild(vegetaImg);
 
@@ -104,6 +106,9 @@ state.boxes = document.querySelectorAll(".box");
 // Get the ID of the turn div where who's turn will be displayed as well as who the winner is
 
 let currentPlayer = document.getElementById("turn");
+let gokuKi = new Audio("./audio/kiBlastGoku.wav");
+let vegetaKi = new Audio("./audio/kiBlastVegeta.wav");
+let endGameAudio = new Audio("./audio/dragonballzTheme.mp3");
 
 //Declare winning conditions
 const winningConditions = [
@@ -148,6 +153,11 @@ function checkWin() {
         div3.style.pointerEvents = "none";
         highlightBoxesOfWinner(div1, div2, div3);
         noMoreClick();
+        endGameAudio.play();
+        gokuKi.pause();
+        gokuKi.currentTime = 0;
+        vegetaKi.pause();
+        vegetaKi.currentTime = 0;
     }
     else if (div4.innerHTML !== "" && div4.innerHTML === div5.innerHTML && div4.innerHTML === div6.innerHTML) {
         spanDiv.innerText = (state.playerName) + " won!";
@@ -164,6 +174,11 @@ function checkWin() {
         div6.style.pointerEvents = "none";
         highlightBoxesOfWinner(div4, div5, div6);
         noMoreClick();
+        endGameAudio.play();
+        gokuKi.pause();
+        gokuKi.currentTime = 0;
+        vegetaKi.pause();
+        vegetaKi.currentTime = 0;
     }
     else if (div7.innerHTML !== "" && div7.innerHTML === div8.innerHTML && div7.innerHTML === div9.innerHTML) {
         spanDiv.innerText = (state.playerName) + " won!";
@@ -180,6 +195,11 @@ function checkWin() {
         div9.style.pointerEvents = "none";
         highlightBoxesOfWinner(div7, div8, div9);
         noMoreClick();
+        endGameAudio.play();
+        gokuKi.pause();
+        gokuKi.currentTime = 0;
+        vegetaKi.pause();
+        vegetaKi.currentTime = 0;
     }
     else if (div1.innerHTML !== "" && div1.innerHTML === div4.innerHTML && div1.innerHTML === div7.innerHTML) {
         spanDiv.innerText = (state.playerName) + " won!";
@@ -196,6 +216,11 @@ function checkWin() {
         div7.style.pointerEvents = "none";
         highlightBoxesOfWinner(div1, div4, div7);
         noMoreClick();
+        endGameAudio.play();
+        gokuKi.pause();
+        gokuKi.currentTime = 0;
+        vegetaKi.pause();
+        vegetaKi.currentTime = 0;
     }
     else if (div2.innerHTML !== "" && div2.innerHTML === div5.innerHTML && div2.innerHTML === div8.innerHTML) {
         spanDiv.innerText = (state.playerName) + " won!";
@@ -212,6 +237,11 @@ function checkWin() {
         div8.style.pointerEvents = "none";
         highlightBoxesOfWinner(div2, div5, div8);
         noMoreClick();
+        endGameAudio.play();
+        gokuKi.pause();
+        gokuKi.currentTime = 0;
+        vegetaKi.pause();
+        vegetaKi.currentTime = 0;
     }
     else if (div3.innerHTML !== "" && div3.innerHTML === div6.innerHTML && div3.innerHTML === div9.innerHTML) {
         spanDiv.innerText = (state.playerName) + " won!";
@@ -228,6 +258,7 @@ function checkWin() {
         div9.style.pointerEvents = "none";
         highlightBoxesOfWinner(div3, div6, div9);
         noMoreClick();
+        endGameAudio.play();
     }
     else if (div1.innerHTML !== "" && div1.innerHTML === div5.innerHTML && div1.innerHTML === div9.innerHTML) {
         spanDiv.innerText = (state.playerName) + " won!";
@@ -244,6 +275,7 @@ function checkWin() {
         div9.style.pointerEvents = "none";
         highlightBoxesOfWinner(div1, div5, div9);
         noMoreClick();
+        endGameAudio.play();
     }
     else if (div3.innerHTML !== "" && div3.innerHTML === div5.innerHTML && div3.innerHTML === div7.innerHTML) {
         spanDiv.innerText = (state.playerName) + " won!";
@@ -260,6 +292,7 @@ function checkWin() {
         div7.style.pointerEvents = "none";
         highlightBoxesOfWinner(div3, div5, div7);
         noMoreClick();
+        endGameAudio.play();
     }
 };
 
@@ -302,6 +335,7 @@ for (let i = 0; i < state.boxes.length; i++) {
             spanDiv.innerText = "Vegeta! GO!";
             gokuImg.src = "";
             vegetaImg.src = "vegeta.png";
+            gokuKi.play();
             //increment hoManyTurns by 1 each time
             state.howManyTurns++;
         } else {
@@ -311,6 +345,7 @@ for (let i = 0; i < state.boxes.length; i++) {
             spanDiv.innerText = "Goku! GO!";
             vegetaImg.src = "";
             gokuImg.src = "goku.png";
+            vegetaKi.play();
             //increment hoManyTurns by 1 each time
             state.howManyTurns++;
         }
@@ -342,5 +377,7 @@ btn.addEventListener("click", () => {
         state.howManyTurns = 0;
         state.gameState = true;
         document.getElementById("turn").innerText = "Goku! GO!";
+        endGameAudio.pause();
+        endGameAudio.currentTime = 0;
     }
 })

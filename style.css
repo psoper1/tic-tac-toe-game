@@ -1,4 +1,4 @@
-.goku {
+#gokuMain {
 	height: 500px;
     position: absolute;
     left: 275px;
@@ -67,5 +67,5 @@
 
 #bg {
 	background-image: url("./imgs/background.jpeg");
-	
 }
+
