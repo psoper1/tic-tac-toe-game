@@ -384,5 +384,7 @@ btn.addEventListener("click", () => {
         document.getElementById("turn").innerText = "Goku! GO!";
         endGameAudio.pause();
         endGameAudio.currentTime = 0;
+        gokuImg.src = "goku.png";
+        vegetaImg.src = "vegeta.png";
     }
 })

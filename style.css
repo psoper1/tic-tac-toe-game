@@ -1,7 +1,8 @@
 #gokuMain {
 	height: 500px;
-    position: absolute;
-    left: 275px;
+	max-width: 1280px;
+    position: fixed;
+    left: 10%;
     top: 106px;
 	animation-name: floating;
     animation-duration: 3s;
@@ -13,13 +14,22 @@
     50%  { transform: translate(0, 15px); }
     100%   { transform: translate(0, -0px); }   
 }
+@media only screen and (max-width: 1280px) {
+    #gokuMain {
+        display: none;
+    }
+	.vegeta {
+		display: none;
+	}
+}
 
 
 
 .vegeta {
 	height: 500px;
-    position: absolute;
-    left: 1323px;
+	max-width: 1280px;
+    position: fixed;
+    right: 10%;
     top: 87px;
 	animation-name: floating;
     animation-duration: 3s;
